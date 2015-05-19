@@ -8,11 +8,11 @@
 
 import UIKit
 import MapKit
-
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
-    let locationManager = CLLocationManager()
+    let locationManagers = CLLocationManager()
+  
     @IBOutlet weak var longitude: UILabel!
     
     @IBAction func btnStops(sender: UIButton) {
@@ -42,17 +42,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.locationManager.requestAlwaysAuthorization()
+       
+      self.locationManagers.requestAlwaysAuthorization()
         
-        // For use in foreground
-        
-        self.locationManager.requestWhenInUseAuthorization()
-        
+      self.locationManagers.requestWhenInUseAuthorization()
+    
         if (CLLocationManager.locationServicesEnabled())
         {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
+            locationManagers.delegate = self
+            locationManagers.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+            locationManagers.startUpdatingLocation()
         }        // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -64,7 +63,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
         var locValue:CLLocationCoordinate2D = manager.location.coordinate
-        var location:CLLocation = locations[locations.count - 1] as CLLocation
+        var location:CLLocation = locations[locations.count - 1] as! CLLocation
         var alts = manager.location.altitude
         
         println("locations = \(locValue.latitude) \(locValue.longitude)")
@@ -88,18 +87,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             latitude: late,
             longitude: longe
         )
-        
-        var span = MKCoordinateSpanMake(0.5, 0.5)
+        var span = MKCoordinateSpanMake(0, 0)
         var region = MKCoordinateRegion(center: location, span: span)
-        
         maps.setRegion(region, animated: true)
-        
         var annotation = MKPointAnnotation()
-        annotation.setCoordinate(location)
-        //  annotation.title = "Roatan"
-        //  annotation.subtitle = "Honduras"
-        
+        annotation.coordinate = location
+        annotation.title = "Location"
+        annotation.subtitle = location.longitude.description + "," + location.latitude.description
         maps.addAnnotation(annotation)
+        
     }
+    
 }
 

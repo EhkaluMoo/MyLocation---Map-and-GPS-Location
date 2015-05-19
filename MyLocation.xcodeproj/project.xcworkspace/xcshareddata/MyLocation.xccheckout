@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C53FC2D5-FE8D-456C-8176-D31035CA07DF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MyLocation</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BD3183506E9AE0F910F6F773C8A245AD510C5FA5</key>
+		<string>https://github.com/ioscourse/MyLocation---Map-and-GPS-Location.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MyLocation.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BD3183506E9AE0F910F6F773C8A245AD510C5FA5</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ioscourse/MyLocation---Map-and-GPS-Location.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BD3183506E9AE0F910F6F773C8A245AD510C5FA5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BD3183506E9AE0F910F6F773C8A245AD510C5FA5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MyLocation</string>
+		</dict>
+	</array>
+</dict>
+</plist>
